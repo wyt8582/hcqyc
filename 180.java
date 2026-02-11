@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class BufferOverflowExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a string:");
+        String input = scanner.nextLine();
+
+        char[] buffer = new char[10];
+        input.getChars(0, input.length(), buffer, 0);
+
+        System.out.println("Buffer content: " + String.valueOf(buffer));
+
+        scanner.close();
+    }
+}
